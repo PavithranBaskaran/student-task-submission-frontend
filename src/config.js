@@ -1,3 +1,3 @@
 export const config = {
-    api : 'http://localhost:3001'
+    api : 'https://student-task-submission-backend.vercel.app'
 }
