@@ -155,19 +155,6 @@ function ViewAssignment() {
                             Submitted
                           </Status>
                         );
-                      } else {
-                        return (
-                          <Status
-                            style={{
-                              backgroundColor: "red",
-                              position: "absolute",
-                              right: 50,
-                              top: 10,
-                            }}
-                          >
-                            Not Submitted
-                          </Status>
-                        );
                       }
                     })}
                   </AccordionSummary>
