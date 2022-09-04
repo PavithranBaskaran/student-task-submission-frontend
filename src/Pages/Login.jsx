@@ -5,12 +5,14 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import LoginNav from "../Components/LoginNav";
 import { config } from "../config";
+import { mobile } from "../responsive";
 import UserContext from "../usercontext";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  ${mobile({width: '100%  '})}
 `;
 
 const Top = styled.div`
@@ -46,6 +48,8 @@ const LoginWrapper = styled.div`
   padding: 20px;
   width: 25%;
   background-color: white;
+  ${mobile({width: '80%'})}
+
 `;
 
 const Form = styled.form`

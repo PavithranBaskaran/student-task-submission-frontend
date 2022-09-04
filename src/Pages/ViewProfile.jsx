@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
 import { config } from "../config";
+import { mobile } from "../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -37,6 +38,8 @@ const LoginWrapper = styled.div`
   padding: 10px;
   width: 70%;
   background-color: white;
+  ${mobile({ width: "100%" })}
+
 `;
 
 const Form = styled.form`
@@ -46,6 +49,8 @@ const Form = styled.form`
 `;
 const FormWrapper = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
+
 `;
 const FormLeft = styled.div`
   flex: 1;
@@ -168,7 +173,7 @@ function ViewProfile() {
       <NavBar data={localStorage.getItem("username")} />
       <Wrapper>
         <Top>
-          <H1>ADMIN DASHBOARD</H1>
+          <H1>VIEW PROFILE</H1>
         </Top>
         <Bottom>
           <LoginWrapper>

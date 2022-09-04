@@ -8,6 +8,7 @@ import axios from "axios";
 import { config } from "../../config";
 import Delete from "@mui/icons-material/Delete";
 import { IconButton, Tooltip } from "@mui/material";
+import { mobile } from "../../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -39,6 +40,8 @@ const LoginWrapper = styled.div`
   padding: 10px;
   width: 70%;
   background-color: white;
+  ${mobile({ width:'100%' })}
+
 `;
 
 const Title = styled.h1`
@@ -52,31 +55,7 @@ const Title = styled.h1`
   padding: 10px;
 `;
 
-const Container = styled.div`
-  height: 250px;
-  width: 250px;
-  margin: 20px;
-  border: 1px solid #375160;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-const Round = styled.div`
-  height: 95%;
-  width: 95%;
-  background-color: #375160;
-  border-radius: 50%;
-`;
-const H3 = styled.h3`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none !important;
-`;
+
 
 function ViewUsers() {
   let contextData = useContext(UserContext);

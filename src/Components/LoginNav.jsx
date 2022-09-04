@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 import UserContext from "../usercontext";
 
 const Container = styled.div`
   height: 60px;
   background-color: whitesmoke;
+  ${mobile({height: '130px'})}
 `;
 
 const Wrapper = styled.div`
@@ -34,6 +36,7 @@ const Right = styled.div`
   justify-content: space-between;
   font-weight: 600;
   font-size: 20px;
+  ${mobile({flexDirection: 'column'})}
 `;
 
 const Student = styled.a`
@@ -54,6 +57,7 @@ const Student = styled.a`
     width: 100%;
     transition: width 0.3s;
   }
+  ${mobile({marginBottom: '20px'})}
 `;
 const Mentor = styled.a`
   color: #375160;
@@ -73,6 +77,8 @@ const Mentor = styled.a`
     width: 100%;
     transition: width 0.3s;
   }
+  ${mobile({marginBottom: '20px'})}
+
 `;
 const Admin = styled.a`
   color: #375160;
@@ -92,6 +98,8 @@ const Admin = styled.a`
     width: 100%;
     transition: width 0.3s;
   }
+  ${mobile({marginBottom: '20px'})}
+
 `;
 
 function LoginNav() {

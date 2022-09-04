@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
 import { config } from "../../config";
+import { mobile } from "../../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,6 +26,8 @@ const H1 = styled.h1`
   color: white;
   font-size: 30px;
   font-weight: 600px;
+  ${mobile({ textAlign:'center' })}
+
 `;
 
 const Bottom = styled.div`
@@ -38,6 +41,8 @@ const LoginWrapper = styled.div`
   padding: 10px;
   width: 70%;
   background-color: white;
+  ${mobile({ width:'100%' })}
+
 `;
 
 const Form = styled.form`
@@ -47,6 +52,8 @@ const Form = styled.form`
 `;
 const FormWrapper = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column"})}
+
 `;
 const FormLeft = styled.div`
   flex: 1;

@@ -7,6 +7,7 @@ import axios from "axios";
 import { config } from "../../config";
 import NavBar from "../../Components/NavBar";
 import UserContext from "../../usercontext";
+import { mobile } from "../../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ const H1 = styled.h1`
   color: white;
   font-size: 30px;
   font-weight: 600px;
+  ${mobile({ textAlign: "center" })}
 `;
 
 const Bottom = styled.div`
@@ -38,6 +40,7 @@ const LoginWrapper = styled.div`
   padding: 10px;
   width: 70%;
   background-color: white;
+  ${mobile({ width: "100%" })}
 `;
 
 const Form = styled.form`
@@ -72,6 +75,10 @@ const Label = styled.label`
   flex: 1;
 `;
 
+const CheckboxWrapper = styled.div`
+  display: flex;
+  ${mobile({ display: "flex", flexDirection: "column" })}
+`;
 const Checkbox = styled.div`
   display: flex;
   align-items: center;
@@ -177,57 +184,59 @@ function AddAssignment() {
 
               <InputItem id="group">
                 <Label>Links to be Submitted </Label>
-                <Checkbox>
-                  <CheckboxLabel htmlFor="frontend-deployed">
-                    <CheckboxInput
-                      id="frontend-deployed"
-                      type="checkbox"
-                      name="assignmentLinks"
-                      onChange={formik.handleChange}
-                      value="FrontEnd Deployed Link"
-                    />
-                    FrontEnd Deployed URL
-                  </CheckboxLabel>
-                </Checkbox>
+                <CheckboxWrapper>
+                  <Checkbox>
+                    <CheckboxLabel htmlFor="frontend-deployed">
+                      <CheckboxInput
+                        id="frontend-deployed"
+                        type="checkbox"
+                        name="assignmentLinks"
+                        onChange={formik.handleChange}
+                        value="FrontEnd Deployed Link"
+                      />
+                      FrontEnd Deployed URL
+                    </CheckboxLabel>
+                  </Checkbox>
 
-                <Checkbox>
-                  <CheckboxLabel htmlFor="frontend-github">
-                    <CheckboxInput
-                      id="frontend-github"
-                      type="checkbox"
-                      name="assignmentLinks"
-                      onChange={formik.handleChange}
-                      value="Frontend GitHub URL"
-                    />
-                    FrontEnd Github URL
-                  </CheckboxLabel>
-                </Checkbox>
+                  <Checkbox>
+                    <CheckboxLabel htmlFor="frontend-github">
+                      <CheckboxInput
+                        id="frontend-github"
+                        type="checkbox"
+                        name="assignmentLinks"
+                        onChange={formik.handleChange}
+                        value="Frontend GitHub URL"
+                      />
+                      FrontEnd Github URL
+                    </CheckboxLabel>
+                  </Checkbox>
 
-                <Checkbox>
-                  <CheckboxLabel htmlFor="backend-deployed">
-                    <CheckboxInput
-                      id="backend-deployed"
-                      type="checkbox"
-                      name="assignmentLinks"
-                      onChange={formik.handleChange}
-                      value="Backend Deployed Link"
-                    />
-                    BackEnd Deployed URL
-                  </CheckboxLabel>
-                </Checkbox>
+                  <Checkbox>
+                    <CheckboxLabel htmlFor="backend-deployed">
+                      <CheckboxInput
+                        id="backend-deployed"
+                        type="checkbox"
+                        name="assignmentLinks"
+                        onChange={formik.handleChange}
+                        value="Backend Deployed Link"
+                      />
+                      BackEnd Deployed URL
+                    </CheckboxLabel>
+                  </Checkbox>
 
-                <Checkbox>
-                  <CheckboxLabel htmlFor="backend-github">
-                    <CheckboxInput
-                      id="backend-github"
-                      type="checkbox"
-                      name="assignmentLinks"
-                      onChange={formik.handleChange}
-                      value="Backend Github URL"
-                    />
-                    BackEnd Github URL
-                  </CheckboxLabel>
-                </Checkbox>
+                  <Checkbox>
+                    <CheckboxLabel htmlFor="backend-github">
+                      <CheckboxInput
+                        id="backend-github"
+                        type="checkbox"
+                        name="assignmentLinks"
+                        onChange={formik.handleChange}
+                        value="Backend Github URL"
+                      />
+                      BackEnd Github URL
+                    </CheckboxLabel>
+                  </Checkbox>
+                </CheckboxWrapper>
               </InputItem>
               {formik.errors.assignmentLinks ? (
                 <span className="errors">{formik.errors.assignmentLinks}</span>

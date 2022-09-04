@@ -7,6 +7,7 @@ import axios from "axios";
 import { config } from "../../config";
 import NavBar from "../../Components/NavBar";
 import UserContext from "../../usercontext";
+import { mobile } from "../../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,6 +26,8 @@ const H1 = styled.h1`
   color: white;
   font-size: 30px;
   font-weight: 600px;
+  ${mobile({ textAlign: "center" })}
+
 `;
 
 const Bottom = styled.div`
@@ -39,6 +42,8 @@ const ListWrapper = styled.div`
   padding: 10px;
   width: 70%;
   background-color: white;
+  ${mobile({ width: "100%" })}
+
 `;
 
 const Title = styled.h1`
@@ -154,7 +159,7 @@ function SubmitAssignment() {
       <NavBar data={localStorage.getItem("username")} />
       <Wrapper>
         <Top>
-          <H1>STUDENT VIEW ASSIGNMENT</H1>
+          <H1>STUDENT SUBMIT ASSIGNMENT</H1>
         </Top>
         <Bottom>
           <ListWrapper>

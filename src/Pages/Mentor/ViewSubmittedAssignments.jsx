@@ -18,6 +18,7 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { mobile } from "../../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ const H1 = styled.h1`
   color: white;
   font-size: 30px;
   font-weight: 600px;
+  ${mobile({ textAlign: 'center' })}
 `;
 
 const Bottom = styled.div`
@@ -49,6 +51,7 @@ const LoginWrapper = styled.div`
   padding: 10px;
   width: 70%;
   background-color: white;
+  ${mobile({ width: '100%' })}
 `;
 
 const Form = styled.form`
@@ -67,6 +70,8 @@ const Title = styled.h1`
   background-color: #375160;
   color: white;
   padding: 10px;
+  ${mobile({ textAlign: 'center' })}
+
 `;
 const TaskContainer = styled.div`
   display: flex;
@@ -83,6 +88,8 @@ const A = styled.a`
   font-size: 24px;
   margin: 10px 20px;
   width: 50%;
+  
+
 `;
 
 function ViewSubmittedAssignments() {

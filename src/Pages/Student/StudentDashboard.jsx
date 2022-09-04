@@ -3,6 +3,7 @@ import NavBar from "../../Components/NavBar";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import UserContext from "../../usercontext";
+import { mobile } from "../../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,6 +16,8 @@ const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+
 `;
 
 const H1 = styled.h1`
@@ -28,6 +31,7 @@ const Bottom = styled.div`
   justify-content: center;
   align-items: center;
   height: 600px;
+  ${mobile({ flexDirection: "column", display:'block' })}
 `;
 
 const Container = styled.div`
@@ -80,13 +84,13 @@ function StudentDashboard() {
               </Round>
             </Container>
           </Link>
-          <Container>
-            <Round>
-              <Link to={"/changepassword"}>
+          <Link to={"/changepassword"}>
+            <Container>
+              <Round>
                 <H3> Change Password</H3>
-              </Link>
-            </Round>
-          </Container>
+              </Round>
+            </Container>
+          </Link>
         </Bottom>
       </Wrapper>
     </>

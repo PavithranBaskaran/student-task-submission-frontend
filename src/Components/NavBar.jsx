@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 import UserContext from "../usercontext";
 
 const Container = styled.div`
   height: 60px;
   background-color: whitesmoke;
+  ${mobile({height: '130px'})}
+
 `;
 
 const Wrapper = styled.div`
@@ -34,6 +37,8 @@ const Right = styled.div`
   justify-content: flex-end;
   font-weight: 600;
   font-size: 20px;
+  ${mobile({flexDirection: 'column'})}
+
 `;
 
 const LogoutBtn = styled.button`

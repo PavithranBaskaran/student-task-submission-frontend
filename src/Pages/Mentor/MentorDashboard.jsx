@@ -3,10 +3,12 @@ import NavBar from "../../Components/NavBar";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import UserContext from "../../usercontext";
+import { mobile } from "../../responsive";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+
 `;
 
 const Top = styled.div`
@@ -28,6 +30,8 @@ const Bottom = styled.div`
   justify-content: center;
   align-items: center;
   height: 600px;
+  ${mobile({ flexDirection: "column", display:'block' })}
+
 `;
 
 const Container = styled.div`

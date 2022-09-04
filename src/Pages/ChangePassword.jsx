@@ -8,6 +8,7 @@ import axios from "axios";
 import { config } from "../config";
 import UserContext from "../usercontext";
 import NavBar from "../Components/NavBar";
+import { mobile } from "../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -39,6 +40,8 @@ const LoginWrapper = styled.div`
   padding: 10px;
   width: 70%;
   background-color: white;
+  ${mobile({ width: '100%' })}
+
 `;
 
 const Form = styled.form`
